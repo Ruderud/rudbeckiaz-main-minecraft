@@ -1,7 +1,7 @@
 {
   "name": "rudbeckiaz-main-minecraft",
   "scripts": {
-    "deploy": "sls deploy"
+    "deploy": "tsc -p . && sls deploy"
   },
   "devDependencies": {
     "esbuild": "^0.14.25",
