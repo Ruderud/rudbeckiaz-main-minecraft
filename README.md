@@ -4,7 +4,7 @@ use Serverless [Framework Aws-node-typescript template ](https://github.com/serv
 
 ## Usage
 
-### requrements
+### Requrements
 
 - AWS credentials(Local), aws cli, nodejs
 
@@ -16,4 +16,14 @@ $ aws configure # input AWS Access Key & AWS Acess Secret Key
 
 it saves at $ ~/.aws
 
+### Installation
+
+```bash
+$ yarn install
+```
+
 ### Deployment
+
+```bash
+$ yarn deploy
+```
