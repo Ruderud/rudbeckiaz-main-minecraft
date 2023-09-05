@@ -1,11 +1,17 @@
 {
+  "name": "rudbeckiaz-main-minecraft",
+  "scripts": {
+    "deploy": "sls deploy"
+  },
   "devDependencies": {
     "esbuild": "^0.14.25",
-    "serverless-esbuild": "^1.25.0"
+    "serverless-esbuild": "^1.25.0",
+    "typescript": "^5.2.2"
   },
-  "name": "rudbeckiaz-main-minecraft",
   "dependencies": {
     "@types/aws-lambda": "^8.10.119",
-    "aws-lambda": "^1.0.7"
-  }
+    "aws-lambda": "^1.0.7",
+    "serverless": "^3.34.0"
+  },
+  "packageManager": "yarn@3.6.3"
 }

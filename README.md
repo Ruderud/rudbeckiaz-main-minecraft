@@ -4,10 +4,16 @@ use Serverless [Framework Aws-node-typescript template ](https://github.com/serv
 
 ## Usage
 
-Rudbeckiaz-main 에서 사용되는 minecraft p2p connection 및 Rooms 관리담당 로직
+### requrements
+
+- AWS credentials(Local), aws cli, nodejs
+
+- how to set AWS Credentials(require aws cli):
+
+```bash
+$ aws configure # input AWS Access Key & AWS Acess Secret Key
+```
+
+it saves at $ ~/.aws
 
 ### Deployment
-
-```
-$ serverless deploy
-```
