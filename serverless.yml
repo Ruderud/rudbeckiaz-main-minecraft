@@ -1,0 +1,29 @@
+org: ruderud
+app: rudbeckiaz-main
+service: rudbeckiaz-main-minecraft
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment:
+    TZ: 'Asia/Seoul'
+
+functions:
+  entryHandler:
+    handler: handler.entryHandler
+    events:
+      - httpApi: '*'
+
+  roomHandler:
+    handler: handler.roomHandler
+    events:
+      - httpApi:
+          method: '*'
+          path: /room/{roomName}
+      - httpApi:
+          method: 'GET'
+          path: /rooms
+
+plugins:
+  - serverless-esbuild
