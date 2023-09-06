@@ -4,14 +4,14 @@
     "deploy": "tsc -p . && sls deploy"
   },
   "devDependencies": {
-    "esbuild": "^0.14.25",
-    "serverless-esbuild": "^1.25.0",
-    "typescript": "^5.2.2"
-  },
-  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.405.0",
+    "@aws-sdk/lib-dynamodb": "^3.405.0",
     "@types/aws-lambda": "^8.10.119",
     "aws-lambda": "^1.0.7",
-    "serverless": "^3.34.0"
+    "esbuild": "^0.14.25",
+    "serverless": "^3.34.0",
+    "serverless-esbuild": "^1.25.0",
+    "typescript": "^5.2.2"
   },
   "packageManager": "yarn@3.6.3"
 }
