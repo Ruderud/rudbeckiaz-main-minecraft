@@ -38,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:29.5.4"],\
             ["@types/uuid", "npm:9.0.3"],\
             ["aws-lambda", "npm:1.0.7"],\
+            ["aws-sdk", "npm:2.1452.0"],\
             ["aws-sdk-client-mock", "npm:3.0.0"],\
             ["esbuild", "npm:0.19.2"],\
             ["jest", "virtual:b1075af5f3bc56149236a7573a7b5e97153a2301bd67dde7f0c8632cc67ebf7d86e5f17b0f85b3afdc12e5a8bd986cfe873a1cdf734a985802a3ae4a3df11cd6#npm:29.6.4"],\
@@ -5224,6 +5225,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/aws-sdk-npm-2.1451.0-2ecdbaeac7-3b7b908d1d.zip/node_modules/aws-sdk/",\
           "packageDependencies": [\
             ["aws-sdk", "npm:2.1451.0"],\
+            ["buffer", "npm:4.9.2"],\
+            ["events", "npm:1.1.1"],\
+            ["ieee754", "npm:1.1.13"],\
+            ["jmespath", "npm:0.16.0"],\
+            ["querystring", "npm:0.2.0"],\
+            ["sax", "npm:1.2.1"],\
+            ["url", "npm:0.10.3"],\
+            ["util", "npm:0.12.5"],\
+            ["uuid", "npm:8.0.0"],\
+            ["xml2js", "npm:0.5.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:2.1452.0", {\
+          "packageLocation": "./.yarn/cache/aws-sdk-npm-2.1452.0-1b0ff16ab8-afdd235665.zip/node_modules/aws-sdk/",\
+          "packageDependencies": [\
+            ["aws-sdk", "npm:2.1452.0"],\
             ["buffer", "npm:4.9.2"],\
             ["events", "npm:1.1.1"],\
             ["ieee754", "npm:1.1.13"],\
@@ -10444,6 +10462,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/jest", "npm:29.5.4"],\
             ["@types/uuid", "npm:9.0.3"],\
             ["aws-lambda", "npm:1.0.7"],\
+            ["aws-sdk", "npm:2.1452.0"],\
             ["aws-sdk-client-mock", "npm:3.0.0"],\
             ["esbuild", "npm:0.19.2"],\
             ["jest", "virtual:b1075af5f3bc56149236a7573a7b5e97153a2301bd67dde7f0c8632cc67ebf7d86e5f17b0f85b3afdc12e5a8bd986cfe873a1cdf734a985802a3ae4a3df11cd6#npm:29.6.4"],\

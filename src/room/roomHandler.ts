@@ -1,43 +1,41 @@
-import { APIGatewayProxyEventV2, APIGatewayProxyHandlerV2, APIGatewayProxyResultV2 } from 'aws-lambda';
-import {
-  DeleteItemCommand,
-  DynamoDBClient,
-  GetItemCommand,
-  PutItemCommand,
-  ScanCommand,
-} from '@aws-sdk/client-dynamodb';
+import { APIGatewayProxyEventV2, APIGatewayProxyResultV2 } from 'aws-lambda';
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { DynamoDBDocumentClient, GetCommand, PutCommand, DeleteCommand, ScanCommand } from '@aws-sdk/lib-dynamodb';
 import { v4 as uuidv4 } from 'uuid';
 
 const client = new DynamoDBClient({ region: 'us-east-1' });
+const ddbDocClient = DynamoDBDocumentClient.from(client);
 const tableName = 'rudbeckiaz-main-minecraft-room';
 
 const getRoom = async (id?: string): Promise<APIGatewayProxyResultV2> => {
   if (id) {
-    const result = await client.send(
-      new GetItemCommand({
+    const response = await ddbDocClient.send(
+      new GetCommand({
         TableName: tableName,
         Key: {
-          id: { S: id },
+          id: id,
         },
       })
     );
+    const { $metadata, ...rest } = response;
     return {
       statusCode: 200,
       body: JSON.stringify({
-        ...result.Item,
+        ...rest,
       }),
     };
   } else {
-    const result = await client.send(
+    const response = await ddbDocClient.send(
       new ScanCommand({
         TableName: tableName,
       })
     );
+    const { $metadata, ...rest } = response;
+
     return {
       statusCode: 200,
       body: JSON.stringify({
-        rooms: result.Items,
-        length: result.Items?.length,
+        ...rest,
       }),
     };
   }
@@ -50,12 +48,11 @@ type CreateRoomParams = {
 
 const createRoom = async (params: CreateRoomParams): Promise<APIGatewayProxyResultV2> => {
   await client.send(
-    new PutItemCommand({
+    new PutCommand({
       TableName: tableName,
       Item: {
-        id: { S: uuidv4() },
-        roomName: { S: params.roomName },
-        host: { S: params.host },
+        id: uuidv4(),
+        ...params,
       },
     })
   );
@@ -74,7 +71,7 @@ type DeleteRoomParams = {
 
 const deleteRoom = async (params: DeleteRoomParams): Promise<APIGatewayProxyResultV2> => {
   await client.send(
-    new DeleteItemCommand({
+    new DeleteCommand({
       TableName: tableName,
       Key: {
         id: { S: params.id },
@@ -97,7 +94,7 @@ type UpdateRoomParams = {
 
 const updateRoom = async (params: UpdateRoomParams): Promise<APIGatewayProxyResultV2> => {
   await client.send(
-    new PutItemCommand({
+    new PutCommand({
       TableName: tableName,
       Item: {
         id: { S: params.id },
