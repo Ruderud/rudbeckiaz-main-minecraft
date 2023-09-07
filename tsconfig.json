@@ -29,14 +29,16 @@
     /* Type Checking */
     "noImplicitAny": true,
     "strict": true /* Enable all strict type-checking options. */,
+    "outDir": "./dist" /* Redirect output structure to the directory. */,
 
     /* Completeness */
     "skipDefaultLibCheck": true /* Skip type checking .d.ts files that are included with TypeScript. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "exclude": ["**/*.test.ts"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.test.ts"]
 }
