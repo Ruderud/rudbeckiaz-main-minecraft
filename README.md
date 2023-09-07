@@ -1,4 +1,4 @@
-# Serverless Framework AWS TypeScript Example
+# Rudbeckiaz-main-mincraft
 
 use Serverless [Framework Aws-node-typescript template ](https://github.com/serverless/examples/tree/v3/aws-node-typescript)
 
