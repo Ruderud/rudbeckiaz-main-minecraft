@@ -1,6 +1,6 @@
 {
   "name": "rudbeckiaz-main-minecraft",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "scripts": {
     "test": "jest",
     "build": "esbuild src/index.ts --bundle --platform=node --tsconfig=./tsconfig.json --outfile=dist/index.js",
