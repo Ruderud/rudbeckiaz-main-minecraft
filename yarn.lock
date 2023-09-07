@@ -324,6 +324,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@aws-sdk/lib-dynamodb@npm:^3.405.0":
+  version: 3.405.0
+  resolution: "@aws-sdk/lib-dynamodb@npm:3.405.0"
+  dependencies:
+    "@aws-sdk/util-dynamodb": 3.405.0
+    tslib: ^2.5.0
+  peerDependencies:
+    "@aws-sdk/client-dynamodb": ^3.0.0
+  checksum: 4f2b0e6352896c07bbbfcbeee276b3fa283da124560a939b4e7f8def69848ae6e616c5bc5e211926f64cb746374890065cf3152d9ee6ef7709d1a28b2fcce008
+  languageName: node
+  linkType: hard
+
 "@aws-sdk/middleware-endpoint-discovery@npm:3.405.0":
   version: 3.405.0
   resolution: "@aws-sdk/middleware-endpoint-discovery@npm:3.405.0"
@@ -462,6 +474,15 @@ __metadata:
     "@smithy/types": ^2.2.2
     tslib: ^2.5.0
   checksum: b0c3531336e3dc0a3e2524199026a2366a29a4eee07195bffd6a9d48c778924183ac9894029b1053d0f744121cec3b7d397828f2065acf37eea79d3106af1273
+  languageName: node
+  linkType: hard
+
+"@aws-sdk/util-dynamodb@npm:3.405.0":
+  version: 3.405.0
+  resolution: "@aws-sdk/util-dynamodb@npm:3.405.0"
+  dependencies:
+    tslib: ^2.5.0
+  checksum: 317afffce8a9fde0ef5016f7e0a6930627cc462e598b8135820aea70c21addf612d15dd64eb9119e7abc7270af526286e026d7479ab5e7807453a135f5c8f261
   languageName: node
   linkType: hard
 
@@ -2537,6 +2558,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sinonjs/commons@npm:^1.7.0":
+  version: 1.8.6
+  resolution: "@sinonjs/commons@npm:1.8.6"
+  dependencies:
+    type-detect: 4.0.8
+  checksum: 7d3f8c1e85f30cd4e83594fc19b7a657f14d49eb8d95a30095631ce15e906c869e0eff96c5b93dffea7490c00418b07f54582ba49c6560feb2a8c34c0b16832d
+  languageName: node
+  linkType: hard
+
+"@sinonjs/commons@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@sinonjs/commons@npm:2.0.0"
+  dependencies:
+    type-detect: 4.0.8
+  checksum: 5023ba17edf2b85ed58262313b8e9b59e23c6860681a9af0200f239fe939e2b79736d04a260e8270ddd57196851dde3ba754d7230be5c5234e777ae2ca8af137
+  languageName: node
+  linkType: hard
+
 "@sinonjs/commons@npm:^3.0.0":
   version: 3.0.0
   resolution: "@sinonjs/commons@npm:3.0.0"
@@ -2555,6 +2594,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sinonjs/fake-timers@npm:^9.1.2":
+  version: 9.1.2
+  resolution: "@sinonjs/fake-timers@npm:9.1.2"
+  dependencies:
+    "@sinonjs/commons": ^1.7.0
+  checksum: 7d3aef54e17c1073101cb64d953157c19d62a40e261a30923fa1ee337b049c5f29cc47b1f0c477880f42b5659848ba9ab897607ac8ea4acd5c30ddcfac57fca6
+  languageName: node
+  linkType: hard
+
+"@sinonjs/samsam@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@sinonjs/samsam@npm:7.0.1"
+  dependencies:
+    "@sinonjs/commons": ^2.0.0
+    lodash.get: ^4.4.2
+    type-detect: ^4.0.8
+  checksum: 291efb158d54c67dee23ddabcb28873d22063449b692aaa3b2a4f1826d2f79d38695574063c92e9c17573cc805cd6acbf0ab0c66c9f3aed7afd0f12a2b905615
+  languageName: node
+  linkType: hard
+
+"@sinonjs/text-encoding@npm:^0.7.1":
+  version: 0.7.2
+  resolution: "@sinonjs/text-encoding@npm:0.7.2"
+  checksum: fe690002a32ba06906cf87e2e8fe84d1590294586f2a7fd180a65355b53660c155c3273d8011a5f2b77209b819aa7306678ae6e4aea0df014bd7ffd4bbbcf1ab
+  languageName: node
+  linkType: hard
+
 "@smithy/abort-controller@npm:^2.0.5":
   version: 2.0.5
   resolution: "@smithy/abort-controller@npm:2.0.5"
@@ -2562,6 +2628,16 @@ __metadata:
     "@smithy/types": ^2.2.2
     tslib: ^2.5.0
   checksum: 2e328942b9f42c1186943ed300acd1bd0dbbf0b69ec4826a124fb1e649bcaef556c24d13023439dac0ce93cf37a46e3a277fe8a683fcaee95537d192a9f5d7da
+  languageName: node
+  linkType: hard
+
+"@smithy/abort-controller@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "@smithy/abort-controller@npm:2.0.6"
+  dependencies:
+    "@smithy/types": ^2.3.0
+    tslib: ^2.5.0
+  checksum: f5d148b8bbd5aa93708651dee68f22b1e5adcfc78bc6dc12e325db4c374ea29965bc711448bf7a780693e9ba6b0682821a7e0a1e1227f8f71b50a3fc3ed4e9b1
   languageName: node
   linkType: hard
 
@@ -2612,6 +2688,19 @@ __metadata:
     "@smithy/util-base64": ^2.0.0
     tslib: ^2.5.0
   checksum: dae54728eca4e47b0e9604dd87cc503887f62d796b2f92efbbcdfcb4b7432454fa866898416ddf7fd02e7a7d06eb2ba0f1709e418cb1ce763764797f53188b46
+  languageName: node
+  linkType: hard
+
+"@smithy/fetch-http-handler@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@smithy/fetch-http-handler@npm:2.1.1"
+  dependencies:
+    "@smithy/protocol-http": ^3.0.1
+    "@smithy/querystring-builder": ^2.0.6
+    "@smithy/types": ^2.3.0
+    "@smithy/util-base64": ^2.0.0
+    tslib: ^2.5.0
+  checksum: 89b858fad9afe1097ebe96164a746e8f847c71a6e8aee8d5b5cd0f0a38790d40df17fd4e875d7a45f94973670c115af3bbc68e8ce5728642644a81ebcca2e5c5
   languageName: node
   linkType: hard
 
@@ -2729,6 +2818,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@smithy/node-http-handler@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@smithy/node-http-handler@npm:2.1.1"
+  dependencies:
+    "@smithy/abort-controller": ^2.0.6
+    "@smithy/protocol-http": ^3.0.1
+    "@smithy/querystring-builder": ^2.0.6
+    "@smithy/types": ^2.3.0
+    tslib: ^2.5.0
+  checksum: 4b298bcc98deefc319193549bcd7fce570bda81a954c23ed9135379d7251d89e1cfd74d7d86218e452114c5980b4fab2d4470a1d1d94bcb694deac21fe58ff4b
+  languageName: node
+  linkType: hard
+
 "@smithy/property-provider@npm:^2.0.0, @smithy/property-provider@npm:^2.0.6":
   version: 2.0.6
   resolution: "@smithy/property-provider@npm:2.0.6"
@@ -2749,6 +2851,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@smithy/protocol-http@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@smithy/protocol-http@npm:3.0.1"
+  dependencies:
+    "@smithy/types": ^2.3.0
+    tslib: ^2.5.0
+  checksum: 4dee1eaf03cf4420dfab9bd2528a33a251d9d518d54b80e785a828c78bfb62f5cfb2155618b84cddf2670cfe7a9e65f0b70c916b4c135f3e6054c86a281042f1
+  languageName: node
+  linkType: hard
+
 "@smithy/querystring-builder@npm:^2.0.5":
   version: 2.0.5
   resolution: "@smithy/querystring-builder@npm:2.0.5"
@@ -2757,6 +2869,17 @@ __metadata:
     "@smithy/util-uri-escape": ^2.0.0
     tslib: ^2.5.0
   checksum: 4a684189ac9bf50dba2c648a6a36299181bcdf3e688dc5e5bce94a5befd30e6662b6e84e5a30e8876dc2ff293eeb74f4fdf17446e8886228a62f1cbcf5c0e807
+  languageName: node
+  linkType: hard
+
+"@smithy/querystring-builder@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "@smithy/querystring-builder@npm:2.0.6"
+  dependencies:
+    "@smithy/types": ^2.3.0
+    "@smithy/util-uri-escape": ^2.0.0
+    tslib: ^2.5.0
+  checksum: 2204468dca7f039afe99cc37f2ec9804fc714bd9076911ade8cbd59c5d3cfe1d8e0073125dbf15eb1d1f96cfbc34dd889a941ab80dd02d0f1c4613c40526839a
   languageName: node
   linkType: hard
 
@@ -2815,12 +2938,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@smithy/smithy-client@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@smithy/smithy-client@npm:2.1.1"
+  dependencies:
+    "@smithy/middleware-stack": ^2.0.0
+    "@smithy/types": ^2.3.0
+    "@smithy/util-stream": ^2.0.7
+    tslib: ^2.5.0
+  checksum: 185c939eff51cb31a486b2f3f6e00b22b47db05b7d8432eb603c45043ae26bf6d895a0ebf58f67a54218701c16ce4144beb7ea788a1953b47aba22cfd0aa6941
+  languageName: node
+  linkType: hard
+
 "@smithy/types@npm:^2.2.2":
   version: 2.2.2
   resolution: "@smithy/types@npm:2.2.2"
   dependencies:
     tslib: ^2.5.0
   checksum: 2799a14620da60efb2a0aba1bf9adc553a5446dc447b9ee1d7a95410233a70dff2b5e563fecf84388137dabbe662c6bf3a2247ca20a1f266c1256f82e0f25fcf
+  languageName: node
+  linkType: hard
+
+"@smithy/types@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@smithy/types@npm:2.3.0"
+  dependencies:
+    tslib: ^2.5.0
+  checksum: c0195be70fed780cd3063d54481b7393eec9d229c49aa05da76570a8ad1eb2478888700fbb5f004c38ce6b1c99175898639225a44c0dc474419524f4d62b8bb4
   languageName: node
   linkType: hard
 
@@ -2949,6 +3093,22 @@ __metadata:
     "@smithy/util-utf8": ^2.0.0
     tslib: ^2.5.0
   checksum: a78312fcbd50b55eb995959fccea8b7957dd352a1fff1abea2906aa5629305b68a9f3025bcd1edd60e5a2d5dd9e1dab00959f5971ded0d450fb463cf9865aedd
+  languageName: node
+  linkType: hard
+
+"@smithy/util-stream@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "@smithy/util-stream@npm:2.0.7"
+  dependencies:
+    "@smithy/fetch-http-handler": ^2.1.1
+    "@smithy/node-http-handler": ^2.1.1
+    "@smithy/types": ^2.3.0
+    "@smithy/util-base64": ^2.0.0
+    "@smithy/util-buffer-from": ^2.0.0
+    "@smithy/util-hex-encoding": ^2.0.0
+    "@smithy/util-utf8": ^2.0.0
+    tslib: ^2.5.0
+  checksum: 0ba5377a0baa014065aba5ddedec4f474fd0b876f9d2347a0d0d3a725903a5440f9942c89b493ab2061be65553354a15554b671049ec201a505b909049632b27
   languageName: node
   linkType: hard
 
@@ -3176,10 +3336,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/sinon@npm:^10.0.10":
+  version: 10.0.16
+  resolution: "@types/sinon@npm:10.0.16"
+  dependencies:
+    "@types/sinonjs__fake-timers": "*"
+  checksum: 1216aac584500d6bf845ca76f57e82f8459cf9de4ed80a55e50aa4438360fc418789a42181e211c5d279e97f86a3a994e3c81e43971d540737caca0193242bbf
+  languageName: node
+  linkType: hard
+
+"@types/sinonjs__fake-timers@npm:*":
+  version: 8.1.2
+  resolution: "@types/sinonjs__fake-timers@npm:8.1.2"
+  checksum: bbc73a5ab6c0ec974929392f3d6e1e8db4ebad97ec506d785301e1c3d8a4f98a35b1aa95b97035daef02886fd8efd7788a2fa3ced2ec7105988bfd8dce61eedd
+  languageName: node
+  linkType: hard
+
 "@types/stack-utils@npm:^2.0.0":
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
   checksum: 205fdbe3326b7046d7eaf5e494d8084f2659086a266f3f9cf00bccc549c8e36e407f88168ad4383c8b07099957ad669f75f2532ed4bc70be2b037330f7bae019
+  languageName: node
+  linkType: hard
+
+"@types/uuid@npm:^9.0.3":
+  version: 9.0.3
+  resolution: "@types/uuid@npm:9.0.3"
+  checksum: 3dde198defd71c067dd14b3050a8fe6d1ead5fe94ec318472e2c30a399d13f18941fe66cffabdcac7267177c9de2f975fdee6f0cc87cde610a2578e1ce4cc3af
   languageName: node
   linkType: hard
 
@@ -3513,6 +3696,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"aws-sdk-client-mock@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "aws-sdk-client-mock@npm:3.0.0"
+  dependencies:
+    "@types/sinon": ^10.0.10
+    sinon: ^14.0.2
+    tslib: ^2.1.0
+  checksum: 6298de923260bc824d0c2788196f8839a20da8d64ed82e662913f19417ab872c6cb4c029c5f8f2782da0a4c16e37a8ac077da0bdb19c4e0c82707cf286f7c5d3
+  languageName: node
+  linkType: hard
+
 "aws-sdk@npm:^2.1404.0, aws-sdk@npm:^2.814.0":
   version: 2.1451.0
   resolution: "aws-sdk@npm:2.1451.0"
@@ -3762,6 +3956,15 @@ __metadata:
   bin:
     browserslist: cli.js
   checksum: 1e27c0f111a35d1dd0e8fc2c61781b0daefabc2c9471b0b10537ce54843014bceb2a1ce4571af1a82b2bf1e6e6e05d38865916689a158f03bc2c7a4ec2577db8
+  languageName: node
+  linkType: hard
+
+"bs-logger@npm:0.x":
+  version: 0.2.6
+  resolution: "bs-logger@npm:0.2.6"
+  dependencies:
+    fast-json-stable-stringify: 2.x
+  checksum: d34bdaf68c64bd099ab97c3ea608c9ae7d3f5faa1178b3f3f345acd94e852e608b2d4f9103fb2e503f5e69780e98293df41691b84be909b41cf5045374d54606
   languageName: node
   linkType: hard
 
@@ -4545,6 +4748,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"diff@npm:^5.0.0":
+  version: 5.1.0
+  resolution: "diff@npm:5.1.0"
+  checksum: c7bf0df7c9bfbe1cf8a678fd1b2137c4fb11be117a67bc18a0e03ae75105e8533dbfb1cda6b46beb3586ef5aed22143ef9d70713977d5fb1f9114e21455fba90
+  languageName: node
+  linkType: hard
+
 "dir-glob@npm:^3.0.1":
   version: 3.0.1
   resolution: "dir-glob@npm:3.0.1"
@@ -4973,7 +5183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-json-stable-stringify@npm:^2.1.0":
+"fast-json-stable-stringify@npm:2.x, fast-json-stable-stringify@npm:^2.1.0":
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
   checksum: b191531e36c607977e5b1c47811158733c34ccb3bfde92c44798929e9b4154884378536d26ad90dfecd32e1ffc09c545d23535ad91b3161a27ddbb8ebe0cbecb
@@ -5914,6 +6124,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"isarray@npm:0.0.1":
+  version: 0.0.1
+  resolution: "isarray@npm:0.0.1"
+  checksum: 49191f1425681df4a18c2f0f93db3adb85573bcdd6a4482539d98eac9e705d8961317b01175627e860516a2fc45f8f9302db26e5a380a97a520e272e2a40a8d4
+  languageName: node
+  linkType: hard
+
 "isarray@npm:^1.0.0, isarray@npm:~1.0.0":
   version: 1.0.0
   resolution: "isarray@npm:1.0.0"
@@ -6380,7 +6597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-util@npm:^29.6.3":
+"jest-util@npm:^29.0.0, jest-util@npm:^29.6.3":
   version: 29.6.3
   resolution: "jest-util@npm:29.6.3"
   dependencies:
@@ -6600,6 +6817,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"just-extend@npm:^4.0.2":
+  version: 4.2.1
+  resolution: "just-extend@npm:4.2.1"
+  checksum: ff9fdede240fad313efeeeb68a660b942e5586d99c0058064c78884894a2690dc09bba44c994ad4e077e45d913fef01a9240c14a72c657b53687ac58de53b39c
+  languageName: node
+  linkType: hard
+
 "jwt-decode@npm:^2.2.0":
   version: 2.2.0
   resolution: "jwt-decode@npm:2.2.0"
@@ -6710,6 +6934,13 @@ __metadata:
   version: 4.0.6
   resolution: "lodash.isplainobject@npm:4.0.6"
   checksum: 29c6351f281e0d9a1d58f1a4c8f4400924b4c79f18dfc4613624d7d54784df07efaff97c1ff2659f3e085ecf4fff493300adc4837553104cef2634110b0d5337
+  languageName: node
+  linkType: hard
+
+"lodash.memoize@npm:4.x":
+  version: 4.1.2
+  resolution: "lodash.memoize@npm:4.1.2"
+  checksum: 9ff3942feeccffa4f1fafa88d32f0d24fdc62fd15ded5a74a5f950ff5f0c6f61916157246744c620173dddf38d37095a92327d5fd3861e2063e736a5c207d089
   languageName: node
   linkType: hard
 
@@ -6836,7 +7067,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"make-error@npm:^1.1.1":
+"make-error@npm:1.x, make-error@npm:^1.1.1":
   version: 1.3.6
   resolution: "make-error@npm:1.3.6"
   checksum: b86e5e0e25f7f777b77fabd8e2cbf15737972869d852a22b7e73c17623928fccb826d8e46b9951501d3f20e51ad74ba8c59ed584f610526a48f8ccf88aaec402
@@ -7166,6 +7397,19 @@ __metadata:
   version: 1.0.5
   resolution: "nice-try@npm:1.0.5"
   checksum: 0b4af3b5bb5d86c289f7a026303d192a7eb4417231fe47245c460baeabae7277bcd8fd9c728fb6bd62c30b3e15cd6620373e2cf33353b095d8b403d3e8a15aff
+  languageName: node
+  linkType: hard
+
+"nise@npm:^5.1.2":
+  version: 5.1.4
+  resolution: "nise@npm:5.1.4"
+  dependencies:
+    "@sinonjs/commons": ^2.0.0
+    "@sinonjs/fake-timers": ^10.0.2
+    "@sinonjs/text-encoding": ^0.7.1
+    just-extend: ^4.0.2
+    path-to-regexp: ^1.7.0
+  checksum: bc57c10eaec28a6a7ddfb2e1e9b21d5e1fe22710e514f8858ae477cf9c7e9c891475674d5241519193403db43d16c3675f4207bc094a7a27b7e4f56584a78c1b
   languageName: node
   linkType: hard
 
@@ -7525,6 +7769,15 @@ __metadata:
     lru-cache: ^9.1.1 || ^10.0.0
     minipass: ^5.0.0 || ^6.0.2 || ^7.0.0
   checksum: e2557cff3a8fb8bc07afdd6ab163a92587884f9969b05bbbaf6fe7379348bfb09af9ed292af12ed32398b15fb443e81692047b786d1eeb6d898a51eb17ed7d90
+  languageName: node
+  linkType: hard
+
+"path-to-regexp@npm:^1.7.0":
+  version: 1.8.0
+  resolution: "path-to-regexp@npm:1.8.0"
+  dependencies:
+    isarray: 0.0.1
+  checksum: 709f6f083c0552514ef4780cb2e7e4cf49b0cc89a97439f2b7cc69a608982b7690fb5d1720a7473a59806508fc2dae0be751ba49f495ecf89fd8fbc62abccbcd
   languageName: node
   linkType: hard
 
@@ -7984,18 +8237,24 @@ __metadata:
   resolution: "rudbeckiaz-main-minecraft@workspace:."
   dependencies:
     "@aws-sdk/client-dynamodb": ^3.405.0
+    "@aws-sdk/lib-dynamodb": ^3.405.0
     "@babel/core": ^7.22.15
     "@babel/preset-env": ^7.22.15
     "@babel/preset-typescript": ^7.22.15
+    "@smithy/smithy-client": ^2.1.1
     "@types/aws-lambda": ^8.10.119
     "@types/jest": ^29.5.4
+    "@types/uuid": ^9.0.3
     aws-lambda: ^1.0.7
+    aws-sdk-client-mock: ^3.0.0
     esbuild: ^0.19.2
     jest: ^29.6.4
     serverless: ^3.34.0
     serverless-esbuild: ^1.25.0
+    ts-jest: ^29.1.1
     ts-node: ^10.9.1
     typescript: ^5.2.2
+    uuid: ^9.0.0
   languageName: unknown
   linkType: soft
 
@@ -8282,6 +8541,20 @@ __metadata:
     "@kwsites/promise-deferred": ^1.1.1
     debug: ^4.3.4
   checksum: ab7c6901130eadd5758c5f1b0d957573b13cd981549cb5853e757cf13f8cb53b79a50e1acde8eaceba88da814d252f90cf7feab9bd67c64db903250adc51b02f
+  languageName: node
+  linkType: hard
+
+"sinon@npm:^14.0.2":
+  version: 14.0.2
+  resolution: "sinon@npm:14.0.2"
+  dependencies:
+    "@sinonjs/commons": ^2.0.0
+    "@sinonjs/fake-timers": ^9.1.2
+    "@sinonjs/samsam": ^7.0.1
+    diff: ^5.0.0
+    nise: ^5.1.2
+    supports-color: ^7.2.0
+  checksum: de7730cd7785a457e42f9a93e955780c870296036a13816e3c0c5648360afae82fdc748e36c854cf26fb8abd117855a7211aee49265c334fa61439aae17a1b72
   languageName: node
   linkType: hard
 
@@ -8584,7 +8857,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supports-color@npm:^7.1.0":
+"supports-color@npm:^7.1.0, supports-color@npm:^7.2.0":
   version: 7.2.0
   resolution: "supports-color@npm:7.2.0"
   dependencies:
@@ -8758,6 +9031,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ts-jest@npm:^29.1.1":
+  version: 29.1.1
+  resolution: "ts-jest@npm:29.1.1"
+  dependencies:
+    bs-logger: 0.x
+    fast-json-stable-stringify: 2.x
+    jest-util: ^29.0.0
+    json5: ^2.2.3
+    lodash.memoize: 4.x
+    make-error: 1.x
+    semver: ^7.5.3
+    yargs-parser: ^21.0.1
+  peerDependencies:
+    "@babel/core": ">=7.0.0-beta.0 <8"
+    "@jest/types": ^29.0.0
+    babel-jest: ^29.0.0
+    jest: ^29.0.0
+    typescript: ">=4.3 <6"
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    "@jest/types":
+      optional: true
+    babel-jest:
+      optional: true
+    esbuild:
+      optional: true
+  bin:
+    ts-jest: cli.js
+  checksum: a8c9e284ed4f819526749f6e4dc6421ec666f20ab44d31b0f02b4ed979975f7580b18aea4813172d43e39b29464a71899f8893dd29b06b4a351a3af8ba47b402
+  languageName: node
+  linkType: hard
+
 "ts-node@npm:^10.9.1":
   version: 10.9.1
   resolution: "ts-node@npm:10.9.1"
@@ -8810,7 +9116,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-detect@npm:4.0.8":
+"type-detect@npm:4.0.8, type-detect@npm:^4.0.8":
   version: 4.0.8
   resolution: "type-detect@npm:4.0.8"
   checksum: 62b5628bff67c0eb0b66afa371bd73e230399a8d2ad30d852716efcc4656a7516904570cd8631a49a3ce57c10225adf5d0cbdcb47f6b0255fe6557c453925a15
@@ -9273,7 +9579,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:^21.1.1":
+"yargs-parser@npm:^21.0.1, yargs-parser@npm:^21.1.1":
   version: 21.1.1
   resolution: "yargs-parser@npm:21.1.1"
   checksum: ed2d96a616a9e3e1cc7d204c62ecc61f7aaab633dcbfab2c6df50f7f87b393993fe6640d017759fe112d0cb1e0119f2b4150a87305cc873fd90831c6a58ccf1c

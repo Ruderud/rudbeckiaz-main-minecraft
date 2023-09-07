@@ -24,6 +24,7 @@ const config: Config = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
   },
+  preset: 'ts-jest',
 
   // The test environment that will be used for testing
   testEnvironment: 'jest-environment-node',
@@ -33,6 +34,7 @@ const config: Config = {
     '<rootDir>/**/*.test.(js|jsx|ts|tsx)',
     '<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))',
   ],
+  roots: ['<rootDir>/src', '<rootDir>/__tests__'],
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
