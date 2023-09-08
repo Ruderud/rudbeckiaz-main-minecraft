@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: read
+      contents: write
     strategy:
       matrix:
         node-version: [18.x]
@@ -26,7 +26,7 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v3
       with:
-        role-to-assume: ${{ secrets.AWS_ACCESS_KEY_ID.MY_AWS_ROLE_ARN }}
+        role-to-assume: ${{ secrets.MY_AWS_ROLE_ARN }}
         aws-region: us-east-1
     # - name: serverless config aws credentials
     #   uses: serverless/github-action@v3.2
