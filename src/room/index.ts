@@ -18,7 +18,7 @@ export const roomHandler = async (event: APIGatewayProxyEventV2): Promise<APIGat
   try {
     switch (method) {
       case 'GET':
-        return getRoom(event.queryStringParameters?.id);
+        return getRoom(event.queryStringParameters);
       case 'POST':
         return createRoom(JSON.parse(String(event.body)));
       case 'DELETE':

@@ -9,6 +9,14 @@ type CreateRoomParams = {
 };
 
 export const createRoom = async (params: CreateRoomParams): Promise<APIGatewayProxyResultV2> => {
+  if (!params.roomName || !params.host) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: 'Invalid request (roomName and host are required)',
+      }),
+    };
+  }
   await ddbDocClient.send(
     new PutCommand({
       TableName: ROOM_TABLE_NAME,
