@@ -5,7 +5,7 @@
     "test": "jest",
     "build": "esbuild src/index.ts --bundle --platform=node --tsconfig=./tsconfig.json --outfile=dist/index.js",
     "dev": "sls dev",
-    "deploy:Prod": "yarn build && sls deploy"
+    "deploy:Prod": "yarn build && sls deploy",
     "deploy": "yarn test && yarn build && sls deploy"
   },
   "devDependencies": {
