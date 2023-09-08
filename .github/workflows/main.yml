@@ -17,13 +17,14 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i --force
-    - name: serverless deploy
-      uses: serverless/github-action@v3.2
-      with:
-        args: -c "npm run build"
-      env:
-        SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
-        # or if using AWS credentials directly
-        # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    - run: yarn deploy:Prod
+    # - run: npm i --force
+    # - name: serverless deploy
+    #   uses: serverless/github-action@v3.2
+    #   with:
+    #     args: -c "npm run build"
+    #   env:
+    #     SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+    #     # or if using AWS credentials directly
+    #     # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
