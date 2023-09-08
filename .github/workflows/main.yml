@@ -19,8 +19,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
-    - name: serverless config aws credentials
-      uses: serverless/github-action@v3.2
-      with:
-        args: config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile rud --overwrite
+    - run: yarn config
+    # - name: serverless config aws credentials
+    #   uses: serverless/github-action@v3.2
+    #   with:
+    #     args: config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile rud --overwrite
     - run: yarn deploy:Prod
