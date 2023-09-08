@@ -20,7 +20,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
     - name: config aws credentials
-      run: cd ~ && mkdir .aws && cd .aws && echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> credentials && echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> credentials && ls -al
+      run: cd ~ && mkdir .aws && \
+        cd .aws && \
+        echo "[default]" >> config && \
+        echo "region = ap-northeast-2" >> config && \ 
+        echo "output = json" >> config && \
+        echo "[default]" >> credentials && \
+        echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> credentials && \ 
+        echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> credentials && \
+        ls -al
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
