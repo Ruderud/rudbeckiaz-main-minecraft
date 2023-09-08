@@ -6,35 +6,21 @@ on:
       - main
 
 jobs:
-  test:
+  deploy:
+    name: deploy
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
     steps:
-      - name: test
-        env:
-          GIT_EMAIL: ${{ secrets.TEST }}
-          GIT_NAME: ${{ secrets.test }}
-        run: |
-          echo $GIT_EMAIL
-          echo $GIT_NAME
-# jobs:
-#   deploy:
-#     name: deploy
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         node-version: [18.x]
-#     steps:
-#     - uses: actions/checkout@v3
-#     - name: Use Node.js ${{ matrix.node-version }}
-#       uses: actions/setup-node@v3
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#     - run: yarn install
-#     - name: serverless config aws credentials
-#       uses: serverless/github-action@v3.2
-#       with:
-#         args: config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile rud --overwrite
-#       env:
-#         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}}
-#     - run: yarn deploy:Prod
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: yarn install
+    - name: serverless config aws credentials
+      uses: serverless/github-action@v3.2
+      with:
+        args: config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile rud --overwrite
+    - run: yarn deploy:Prod
