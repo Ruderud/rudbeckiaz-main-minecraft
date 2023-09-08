@@ -35,7 +35,7 @@ jobs:
       env:
         MY_AWS_ROLE_ARN: ${{ secrets.MY_AWS_ROLE_ARN }} 
       with:
-        role-to-assume: "$MY_AWS_ROLE_ARN"
+        role-to-assume: $MY_AWS_ROLE_ARN
         aws-region: us-east-1
         role-session-name: githubactions
     # - name: serverless config aws credentials
