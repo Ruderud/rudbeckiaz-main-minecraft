@@ -1,5 +1,5 @@
 import { Handler } from 'aws-lambda';
-import { roomHandler } from './room/roomHandler';
+import { roomHandler } from './room';
 
 const entryHandler: Handler = async (event) => {
   console.log('entryHandler', event);
