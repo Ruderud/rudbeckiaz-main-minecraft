@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    # - run: yarn deploy:Prod  
+    - run: ls -al
     - name: serverless deploy
       uses: serverless/github-action@v3.2
       with:
