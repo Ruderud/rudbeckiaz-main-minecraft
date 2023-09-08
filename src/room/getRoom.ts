@@ -22,7 +22,7 @@ export const getRoom = async (querys?: APIGatewayProxyEventQueryStringParameters
   } else if (querys?.host) {
     const response = await ddbDocClient.send(
       new ScanCommand({
-        TableName: ROOM_TABLE_NAME, // 테이블 이름을 여기에 설정하세요
+        TableName: ROOM_TABLE_NAME,
         FilterExpression: 'host = :hostValue',
         ExpressionAttributeValues: {
           ':hostValue': querys.host,

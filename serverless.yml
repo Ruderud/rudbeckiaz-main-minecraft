@@ -9,6 +9,8 @@ provider:
   environment:
     TZ: 'Asia/Seoul'
     DYNAMODB_TABLE: rudbeckiaz-main-minecraft-room
+  httpApi:
+    cors: true
   iam:
     role:
       statements:
