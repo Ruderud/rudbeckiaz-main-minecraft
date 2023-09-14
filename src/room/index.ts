@@ -17,6 +17,16 @@ export const roomHandler = async (event: APIGatewayProxyEventV2): Promise<APIGat
 
   try {
     switch (method) {
+      case 'OPTIONS':
+        return {
+          statusCode: 200,
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Max-Age': '86400',
+          },
+        };
       case 'GET':
         return getRoom(event.queryStringParameters);
       case 'POST':

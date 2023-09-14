@@ -29,7 +29,6 @@ export const getRoom = async (querys?: APIGatewayProxyEventQueryStringParameters
         },
       })
     );
-    console.log('response', JSON.stringify(response));
     const { $metadata, ...rest } = response;
     return {
       statusCode: 200,

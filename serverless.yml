@@ -8,7 +8,8 @@ provider:
   runtime: nodejs18.x
   environment:
     TZ: 'Asia/Seoul'
-    DYNAMODB_TABLE: rudbeckiaz-main-minecraft-room
+    DYNAMODB_ROOM_TABLE: rudbeckiaz-main-minecraft-room
+    DYNAMODB_USER_TABLE: rudbeckiaz-main-minecraft-user
   httpApi:
     cors: true
   iam:
@@ -22,7 +23,9 @@ provider:
             - dynamodb:PutItem
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
-          Resource: 'arn:aws:dynamodb:${aws:region}:*:table/${self:provider.environment.DYNAMODB_TABLE}'
+          Resource:
+            - 'arn:aws:dynamodb:${aws:region}:*:table/${self:provider.environment.DYNAMODB_ROOM_TABLE}'
+            - 'arn:aws:dynamodb:${aws:region}:*:table/${self:provider.environment.DYNAMODB_USER_TABLE}'
 
 functions:
   entryHandler:
@@ -37,6 +40,13 @@ functions:
           method: '*'
           path: /room
 
+  userHandler:
+    handler: dist/index.userHandler
+    events:
+      - httpApi:
+          method: '*'
+          path: /user
+
 resources:
   Resources:
     RoomDynamoDbTable:
@@ -50,7 +60,20 @@ resources:
           - AttributeName: id
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
-        TableName: ${self:provider.environment.DYNAMODB_TABLE}
+        TableName: ${self:provider.environment.DYNAMODB_ROOM_TABLE}
+
+    UserDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:provider.environment.DYNAMODB_USER_TABLE}
 
 plugins:
   - serverless-esbuild

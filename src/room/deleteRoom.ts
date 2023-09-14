@@ -11,10 +11,10 @@ export const deleteRoom = async (params: DeleteRoomParams): Promise<APIGatewayPr
   await ddbDocClient.send(
     new DeleteCommand({
       TableName: ROOM_TABLE_NAME,
-      //   ConditionExpression: 'host = :hostValue',
-      //   ExpressionAttributeValues: {
-      //     ':hostValue': { S: params.host },
-      //   },
+      ConditionExpression: 'host = :hostValue',
+      ExpressionAttributeValues: {
+        ':hostValue': params.host,
+      },
       Key: {
         id: params.id,
       },
