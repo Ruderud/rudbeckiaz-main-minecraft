@@ -5,8 +5,6 @@
     "test": "jest",
     "build": "esbuild src/index.ts --bundle --platform=node --tsconfig=./tsconfig.json --outfile=dist/index.js",
     "dev": "sls dev",
-    "deploy:Prod": "yarn build && sls deploy",
-    "config": "serverless config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile rud --overwrite",
     "deploy": "yarn test && yarn build && sls deploy"
   },
   "devDependencies": {
