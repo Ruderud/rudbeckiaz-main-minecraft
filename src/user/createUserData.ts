@@ -9,39 +9,41 @@ type CreateUserDataParams = {
 
 export const createUserData = async (params: CreateUserDataParams): Promise<APIGatewayProxyResultV2> => {
   if (params.userName) {
+    const userNameWithoutSpaces = params.userName.replace(/\s/g, '');
     const response = await ddbDocClient.send(
       new ScanCommand({
         TableName: USER_TABLE_NAME,
         FilterExpression: 'userName = :userNameValue',
         ExpressionAttributeValues: {
-          ':userNameValue': params.userName,
+          ':userNameValue': userNameWithoutSpaces,
         },
       })
     );
 
     const { $metadata, ...rest } = response as any;
-
+    console.log(rest);
     const id = uuidv4();
-    const userName = `${params.userName}#${padNumberWithZeros(rest.Count + 1)}`;
+    const nameCode = `#${padNumberWithZeros(rest.Count + 1)}`;
 
     await ddbDocClient.send(
       new PutCommand({
         TableName: USER_TABLE_NAME,
         Item: {
           id,
-          userName,
+          userName: userNameWithoutSpaces,
+          nameCode,
           createdAt: new Date().toISOString(),
         },
       })
     );
 
     return {
-      statusCode: 400,
+      statusCode: 200,
       body: JSON.stringify({
         message: 'created user id',
         userData: {
           id,
-          userName,
+          userName: `${userNameWithoutSpaces}${nameCode}`,
         },
       }),
     };
