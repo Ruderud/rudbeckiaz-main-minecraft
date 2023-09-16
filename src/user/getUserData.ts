@@ -1,7 +1,6 @@
 import { GetCommand } from '@aws-sdk/lib-dynamodb';
 import { APIGatewayProxyEventQueryStringParameters, APIGatewayProxyResultV2 } from 'aws-lambda';
 import { USER_TABLE_NAME, ddbDocClient } from '.';
-import { v4 as uuidv4 } from 'uuid';
 
 export const getUserData = async (
   querys?: APIGatewayProxyEventQueryStringParameters

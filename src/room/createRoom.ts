@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 type CreateRoomParams = {
   roomName: string;
   host: string;
+  isPrivate?: boolean;
 };
 
 export const createRoom = async (params: CreateRoomParams): Promise<APIGatewayProxyResultV2> => {
@@ -23,6 +24,7 @@ export const createRoom = async (params: CreateRoomParams): Promise<APIGatewayPr
       Item: {
         id: uuidv4(),
         ...params,
+        isPrivate: params.isPrivate ?? false,
       },
     })
   );
