@@ -52,7 +52,6 @@ describe('userHandler test start', () => {
   it('should delete userData by userId from the DynamoDB', async () => {
     const deleteUserEvent = USER_EVENTS.DeleteUserEvent({ id: TEST_ID });
     const res = (await userHandler(deleteUserEvent)) as any;
-    console.log(res);
     expect(res.statusCode).toEqual(200);
   });
 });
