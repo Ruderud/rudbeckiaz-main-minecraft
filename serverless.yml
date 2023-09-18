@@ -10,6 +10,7 @@ provider:
     TZ: 'Asia/Seoul'
     DYNAMODB_ROOM_TABLE: rudbeckiaz-main-minecraft-room
     DYNAMODB_USER_TABLE: rudbeckiaz-main-minecraft-user
+    DYNAMODB_CONNECTION_TABLE: rudbeckiaz-main-minecraft-connection
   httpApi:
     cors: true
   iam:
@@ -54,6 +55,16 @@ functions:
     events:
       - websocket: $connect
 
+  disconnectHandler:
+    handler: dist/index.disconnectHandler
+    events:
+      - websocket: $disconnect
+
+  wsDefaultHandler:
+    handler: dist/index.wsDefaultHandler
+    events:
+      - websocket: $default
+
 resources:
   Resources:
     RoomDynamoDbTable:
@@ -81,6 +92,19 @@ resources:
             KeyType: HASH
         BillingMode: PAY_PER_REQUEST
         TableName: ${self:provider.environment.DYNAMODB_USER_TABLE}
+
+    ConnectionDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:provider.environment.DYNAMODB_CONNECTION_TABLE}
 
 plugins:
   - serverless-esbuild

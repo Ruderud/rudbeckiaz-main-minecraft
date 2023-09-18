@@ -1,7 +1,7 @@
 import { Handler } from 'aws-lambda';
 import { roomHandler } from './room';
 import { userHandler } from './user';
-import { connectHandler } from './connect';
+import { wsDefaultHandler, connectHandler, disconnectHandler } from './connect';
 
 const entryHandler: Handler = async (event) => {
   console.log('entryHandler', event);
@@ -10,4 +10,4 @@ const entryHandler: Handler = async (event) => {
   };
 };
 
-export { entryHandler, roomHandler, userHandler, connectHandler };
+export { entryHandler, roomHandler, userHandler, wsDefaultHandler, connectHandler, disconnectHandler };

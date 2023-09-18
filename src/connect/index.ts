@@ -3,6 +3,20 @@ const success = {
 };
 
 export const connectHandler = async (event: any, context: any) => {
+  console.log('connectHandler event', event);
+  console.log('connectHandler context', context);
+  return success;
+};
+
+export const disconnectHandler = async (event: any, context: any) => {
+  console.log('disconnectHandler event', event);
+  console.log('disconnectHandler context', context);
+  return success;
+};
+
+export const wsDefaultHandler = async (event: any, context: any) => {
+  console.log('wsDefaultHandler event', event);
+  console.log('wsDefaultHandler context', context);
   return success;
 };
 
