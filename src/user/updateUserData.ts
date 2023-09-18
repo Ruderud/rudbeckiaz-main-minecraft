@@ -1,32 +1,30 @@
 import { PutCommand } from '@aws-sdk/lib-dynamodb';
 import { APIGatewayProxyResultV2 } from 'aws-lambda';
-import { ROOM_TABLE_NAME, ddbDocClient } from '.';
+import { ddbDocClient, USER_TABLE_NAME } from '.';
 
-type UpdateRoomParams = {
+type UpdateUserDataParams = {
   id: string;
-  host: string;
-  roomName: string;
+  userName: string;
 };
 
-export const updateRoom = async (params: UpdateRoomParams): Promise<APIGatewayProxyResultV2> => {
+export const updateUserData = async (params: UpdateUserDataParams): Promise<APIGatewayProxyResultV2> => {
   try {
     await ddbDocClient.send(
       new PutCommand({
-        TableName: ROOM_TABLE_NAME,
-        ConditionExpression: 'host = :hostValue',
+        TableName: USER_TABLE_NAME,
+        ConditionExpression: 'id = :idValue',
         ExpressionAttributeValues: {
-          ':hostValue': params.host,
+          ':idValue': params.id,
         },
         Item: {
           ...params,
         },
       })
     );
-
     return {
       statusCode: 200,
       body: JSON.stringify({
-        message: `${params.roomName} updated by ${params.host}`,
+        message: `${params.userName} updated by ${params.id}`,
         updatedItem: params,
       }),
     };
@@ -34,7 +32,7 @@ export const updateRoom = async (params: UpdateRoomParams): Promise<APIGatewayPr
     return {
       statusCode: 400,
       body: JSON.stringify({
-        message: `${params.roomName} not updated by ${params.host} because ${error}`,
+        message: `${params.userName} not updated by ${params.id} because ${error}`,
       }),
     };
   }

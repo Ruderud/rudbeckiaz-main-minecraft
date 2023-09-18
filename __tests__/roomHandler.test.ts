@@ -56,6 +56,24 @@ describe('roomHandler test start', () => {
     expect(res.statusCode).toEqual(200);
     expect(resBody.updatedItem.roomName).toEqual(reqBody.roomName);
   });
+  it('should not update room to the DynamoDB (non-exist roomid)', async () => {
+    const updateEvent = ROOM_EVENTS.UpdateRoomEvent({
+      id: 'dumb',
+      host: TEST_HOST,
+      roomName: 'dumbName',
+    });
+    const res = (await roomHandler(updateEvent)) as any;
+    expect(res.statusCode).toEqual(400);
+  });
+  it('should not update room to the DynamoDB (not host)', async () => {
+    const updateEvent = ROOM_EVENTS.UpdateRoomEvent({
+      id: TEST_ID,
+      host: 'im not host',
+      roomName: 'dumbName',
+    });
+    const res = (await roomHandler(updateEvent)) as any;
+    expect(res.statusCode).toEqual(400);
+  });
   it('should delete room to the DynamoDB', async () => {
     const reqBody = {
       id: TEST_ID,

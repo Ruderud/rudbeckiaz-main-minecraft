@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 type CreateUserDataParams = {
   userName: string;
+  isTest?: boolean;
+  id?: string;
 };
 
 export const createUserData = async (params: CreateUserDataParams): Promise<APIGatewayProxyResultV2> => {
@@ -21,7 +23,6 @@ export const createUserData = async (params: CreateUserDataParams): Promise<APIG
     );
 
     const { $metadata, ...rest } = response as any;
-    console.log(rest);
     const id = uuidv4();
     const nameCode = `#${padNumberWithZeros(rest.Count + 1)}`;
 
@@ -29,7 +30,7 @@ export const createUserData = async (params: CreateUserDataParams): Promise<APIG
       new PutCommand({
         TableName: USER_TABLE_NAME,
         Item: {
-          id,
+          id: params.isTest ? params.id : id,
           userName: userNameWithoutSpaces,
           nameCode,
           createdAt: new Date().toISOString(),

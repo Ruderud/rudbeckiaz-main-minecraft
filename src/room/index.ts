@@ -13,7 +13,7 @@ export const ROOM_TABLE_NAME = 'rudbeckiaz-main-minecraft-room';
 
 export const roomHandler = async (event: APIGatewayProxyEventV2): Promise<APIGatewayProxyResultV2> => {
   if (event.requestContext.http.userAgent !== 'testUserAgent') {
-    // Production Evente Logging
+    // only Production Event Logging
     console.log('### /room event ###', event);
   }
   const { method } = event.requestContext.http;

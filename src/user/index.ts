@@ -3,13 +3,18 @@ import { getUserData } from './getUserData';
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 import { createUserData } from './createUserData';
+import { updateUserData } from './updateUserData';
+import { deleteUserData } from './deleteUserData';
 
 const client = new DynamoDBClient({ region: 'us-east-1' });
 export const ddbDocClient = DynamoDBDocumentClient.from(client);
 export const USER_TABLE_NAME = 'rudbeckiaz-main-minecraft-user';
 
 export const userHandler = async (event: APIGatewayProxyEventV2): Promise<APIGatewayProxyResultV2> => {
-  console.log('### /user event ###', event);
+  if (event.requestContext.http.userAgent !== 'testUserAgent') {
+    // only Production Event Logging
+    console.log('### /user event ###', event);
+  }
   const { method } = event.requestContext.http;
 
   try {
@@ -28,6 +33,10 @@ export const userHandler = async (event: APIGatewayProxyEventV2): Promise<APIGat
         return getUserData(event.queryStringParameters);
       case 'POST':
         return createUserData(JSON.parse(String(event.body)));
+      case 'PUT':
+        return updateUserData(JSON.parse(String(event.body)));
+      case 'DELETE':
+        return deleteUserData(JSON.parse(String(event.body)));
       default:
         return {
           statusCode: 400,
