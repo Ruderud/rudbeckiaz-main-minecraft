@@ -22,7 +22,7 @@ describe('userHandler test start', () => {
     const res = (await userHandler(getUserEvent)) as any;
     const data = JSON.parse(res?.body);
     expect(res.statusCode).toEqual(200);
-    expect(data.Item.userName).toEqual('testnewuser');
+    expect(data.userData.userName).toEqual('testnewuser');
   });
 
   it('should not get userData by non-exist userId from the DynamoDB', async () => {

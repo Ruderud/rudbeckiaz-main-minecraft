@@ -23,7 +23,7 @@ export const getUserData = async (
       return {
         statusCode: 200,
         body: JSON.stringify({
-          ...rest,
+          userData: Item,
         }),
       };
     }
