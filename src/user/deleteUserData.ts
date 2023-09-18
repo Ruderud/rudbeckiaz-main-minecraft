@@ -26,7 +26,7 @@ export const deleteUserData = async (params: DeleteUserDataParams): Promise<APIG
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: `${params.id} not deleted because ${error}`,
+        message: `${params.id} not deleted`,
       }),
     };
   }

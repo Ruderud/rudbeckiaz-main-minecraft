@@ -20,6 +20,8 @@ provider:
             - dynamodb:Query
             - dynamodb:Scan
             - dynamodb:GetItem
+            - dynamodb:BatchGetItem
+            - dynamodb:BatchWriteItem
             - dynamodb:PutItem
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
@@ -46,6 +48,11 @@ functions:
       - httpApi:
           method: '*'
           path: /user
+
+  connectHandler:
+    handler: dist/index.connectHandler
+    events:
+      - websocket: $connect
 
 resources:
   Resources:
