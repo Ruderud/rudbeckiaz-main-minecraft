@@ -9,20 +9,23 @@ type UpdateRoomParams = {
 };
 
 export const updateRoom = async (params: UpdateRoomParams): Promise<APIGatewayProxyResultV2> => {
-  await ddbDocClient.send(
+  const result = await ddbDocClient.send(
     new PutCommand({
       TableName: ROOM_TABLE_NAME,
       Item: {
-        id: { S: params.id },
-        roomName: { S: params.roomName },
-        host: { S: params.host },
+        ...params,
       },
     })
   );
+
+  const { $metadata, ...rest } = result;
+
   return {
     statusCode: 200,
     body: JSON.stringify({
       message: `${params.roomName} updated by ${params.host}`,
+      ...rest,
+      updatedItem: params,
     }),
   };
 };

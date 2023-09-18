@@ -12,7 +12,10 @@ export const ddbDocClient = DynamoDBDocumentClient.from(client);
 export const ROOM_TABLE_NAME = 'rudbeckiaz-main-minecraft-room';
 
 export const roomHandler = async (event: APIGatewayProxyEventV2): Promise<APIGatewayProxyResultV2> => {
-  console.log('### /room event ###', event);
+  if (event.requestContext.http.userAgent !== 'testUserAgent') {
+    // Production Evente Logging
+    console.log('### /room event ###', event);
+  }
   const { method } = event.requestContext.http;
 
   try {

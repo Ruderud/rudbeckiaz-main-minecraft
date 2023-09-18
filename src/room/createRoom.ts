@@ -7,6 +7,8 @@ type CreateRoomParams = {
   roomName: string;
   host: string;
   isPrivate?: boolean;
+  isTest?: boolean;
+  id?: string;
 };
 
 export const createRoom = async (params: CreateRoomParams): Promise<APIGatewayProxyResultV2> => {
@@ -22,8 +24,8 @@ export const createRoom = async (params: CreateRoomParams): Promise<APIGatewayPr
     new PutCommand({
       TableName: ROOM_TABLE_NAME,
       Item: {
-        id: uuidv4(),
         ...params,
+        id: params.isTest ? params.id ?? uuidv4() : uuidv4(),
         isPrivate: params.isPrivate ?? false,
       },
     })
