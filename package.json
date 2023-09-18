@@ -29,7 +29,6 @@
     "@aws-sdk/client-dynamodb": "^3.405.0",
     "@types/aws-lambda": "^8.10.119",
     "aws-lambda": "^1.0.7",
-    "serverless-websockets-plugin": "^1.0.0",
     "typescript": "^5.2.2"
   },
   "packageManager": "yarn@3.6.3"
