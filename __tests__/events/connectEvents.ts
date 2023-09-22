@@ -1,0 +1,40 @@
+import { APIGatewayEvent } from 'aws-lambda';
+
+export const ConnectEvent = {
+  headers: {
+    Host: 'h5mrfosj61.execute-api.us-east-1.amazonaws.com',
+    'Sec-WebSocket-Extensions': 'permessage-deflate; client_max_window_bits',
+    'Sec-WebSocket-Key': 'Vi3BIzTVVHerXQKRxOYqbw==',
+    'Sec-WebSocket-Version': '13',
+    'X-Amzn-Trace-Id': 'Root=1-650d1f74-08d934e17ca9a6571cb54c4e',
+    'X-Forwarded-For': '210.96.101.15',
+    'X-Forwarded-Port': '443',
+    'X-Forwarded-Proto': 'https',
+  },
+  multiValueHeaders: {
+    Host: ['h5mrfosj61.execute-api.us-east-1.amazonaws.com'],
+    'Sec-WebSocket-Extensions': ['permessage-deflate; client_max_window_bits'],
+    'Sec-WebSocket-Key': ['Vi3BIzTVVHerXQKRxOYqbw=='],
+    'Sec-WebSocket-Version': ['13'],
+    'X-Amzn-Trace-Id': ['Root=1-650d1f74-08d934e17ca9a6571cb54c4e'],
+    'X-Forwarded-For': ['210.96.101.15'],
+    'X-Forwarded-Port': ['443'],
+    'X-Forwarded-Proto': ['https'],
+  },
+  requestContext: {
+    routeKey: '$connect',
+    eventType: 'CONNECT',
+    extendedRequestId: 'LpHaNG8mIAMFcDw=',
+    requestTime: '22/Sep/2023:05:00:36 +0000',
+    messageDirection: 'IN',
+    stage: 'dev',
+    connectedAt: 1695358836255,
+    requestTimeEpoch: 1695358836273,
+    identity: { sourceIp: '210.96.101.15' },
+    requestId: 'LpHaNG8mIAMFcDw=',
+    domainName: 'h5mrfosj61.execute-api.us-east-1.amazonaws.com',
+    connectionId: 'LpHaNcKDoAMCL0Q=',
+    apiId: 'h5mrfosj61',
+  },
+  isBase64Encoded: false,
+};

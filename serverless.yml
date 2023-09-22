@@ -29,6 +29,7 @@ provider:
           Resource:
             - 'arn:aws:dynamodb:${aws:region}:*:table/${self:provider.environment.DYNAMODB_ROOM_TABLE}'
             - 'arn:aws:dynamodb:${aws:region}:*:table/${self:provider.environment.DYNAMODB_USER_TABLE}'
+            - 'arn:aws:dynamodb:${aws:region}:*:table/${self:provider.environment.DYNAMODB_CONNECTION_TABLE}'
 
 functions:
   entryHandler:
