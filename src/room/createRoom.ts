@@ -20,20 +20,25 @@ export const createRoom = async (params: CreateRoomParams): Promise<APIGatewayPr
       }),
     };
   }
+
+  const Item = {
+    ...params,
+    id: params.isTest ? params.id ?? uuidv4() : uuidv4(),
+    isPrivate: params.isPrivate ?? false,
+    createdAt: new Date().toISOString(),
+  };
+
   await ddbDocClient.send(
     new PutCommand({
       TableName: ROOM_TABLE_NAME,
-      Item: {
-        ...params,
-        id: params.isTest ? params.id ?? uuidv4() : uuidv4(),
-        isPrivate: params.isPrivate ?? false,
-      },
+      Item: Item,
     })
   );
   return {
     statusCode: 200,
     body: JSON.stringify({
       message: `${params.roomName} created by ${params.host}`,
+      roomData: Item,
     }),
   };
 };

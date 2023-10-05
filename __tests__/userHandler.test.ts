@@ -30,16 +30,18 @@ describe('userHandler test start', () => {
     expect(res.statusCode).toEqual(400);
   });
   it('should update userData by userId from the DynamoDB', async () => {
-    const date = new Date().toISOString();
     const reqBody = {
       id: TEST_ID,
-      userName: `new_testName_${date}`,
+      userName: `updated test name`,
     };
     const updateUserEvent = USER_EVENTS.UpdateUserEvent(reqBody);
     const res = (await userHandler(updateUserEvent)) as any;
     const resBody = JSON.parse(res?.body);
+
+    const regex = new RegExp(/updatedtestname/);
+
     expect(res.statusCode).toEqual(200);
-    expect(resBody.updatedItem.userName).toEqual(reqBody.userName);
+    expect(regex.test(resBody.userData.userName)).toEqual(true);
   });
   it('should not update userData by non-exist userId from the DynamoDB', async () => {
     const updateUserEvent = USER_EVENTS.UpdateUserEvent({

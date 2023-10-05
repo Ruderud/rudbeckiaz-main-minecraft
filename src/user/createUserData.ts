@@ -2,6 +2,7 @@ import { APIGatewayProxyResultV2 } from 'aws-lambda';
 import { USER_TABLE_NAME, ddbDocClient } from '.';
 import { PutCommand, ScanCommand } from '@aws-sdk/lib-dynamodb';
 import { v4 as uuidv4 } from 'uuid';
+import { padNumberWithZeros } from '../utils/padNumberWithZeros';
 
 type CreateUserDataParams = {
   userName: string;
@@ -34,6 +35,7 @@ export const createUserData = async (params: CreateUserDataParams): Promise<APIG
           userName: userNameWithoutSpaces,
           nameCode,
           createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
         },
       })
     );
@@ -57,15 +59,3 @@ export const createUserData = async (params: CreateUserDataParams): Promise<APIG
     }),
   };
 };
-
-function padNumberWithZeros(number: number) {
-  // 숫자를 문자열로 변환
-  let numberString = number.toString();
-
-  // 문자열의 길이가 5가 될 때까지 앞에 0을 추가
-  while (numberString.length < 5) {
-    numberString = '0' + numberString;
-  }
-
-  return numberString;
-}
